@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="600dp"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:orientation="horizontal"
+            android:weightSum="95">
+
+            <TextView
+                android:id="@+id/tvDisplay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="center|bottom"
+                android:padding="16dp"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:autoSizeTextType="uniform"
+                android:textSize="40sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5" />
+
+            <android.widget.Button
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:backgroundTint="#F44336"
+                android:text="@string/botao_limpa_digitado"
+                android:textColor="@android:color/white"
+                android:autoSizeTextType="uniform"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <GridLayout
+            android:id="@+id/dialPad"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:background="@android:color/darker_gray"
+            android:columnCount="3"
+            android:rowCount="4"
+            android:padding="1dp">
+
+            <android.widget.Button android:id="@+id/btn1" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_1" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn2" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_2" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn3" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_3" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn4" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_4" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn5" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_5" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn6" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_6" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn7" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_7" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn8" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_8" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn9" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_9" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btnasterisco" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_asterisco" android:backgroundTint="@android:color/white" android:textSize="30sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btn0" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_0" android:backgroundTint="@android:color/white" android:textSize="35sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+            <android.widget.Button android:id="@+id/btnjogodavelha" android:layout_width="0dp" android:layout_height="0dp" android:text="@string/botao_jogodavelha" android:backgroundTint="@android:color/white" android:textSize="30sp" android:autoSizeTextType="uniform" android:layout_columnWeight="1" android:layout_rowWeight="1" android:textColor="@android:color/black" android:layout_margin="3dp"/>
+        </GridLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="#4CAF50"
+            android:text="@string/botao_ligar"
+            android:textColor="@android:color/white"
+            android:autoSizeTextType="uniform"
+            android:textSize="40sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <Button
+            android:id="@+id/btnContacts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11"
+            android:backgroundTint="#2196F3"
+            android:text="@string/botao_contatos"
+            android:textColor="@android:color/white"
+            android:autoSizeTextType="uniform"
+            android:textSize="35sp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+</ScrollView>

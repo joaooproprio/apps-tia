@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ameliafone</string>
+    <string name="botao_ligar">LIGAR</string>
+    <string name="botao_contatos">CONTATOS</string>
+    <string name="botao_1">1</string>
+    <string name="botao_2">2</string>
+    <string name="botao_3">3</string>
+    <string name="botao_4">4</string>
+    <string name="botao_5">5</string>
+    <string name="botao_6">6</string>
+    <string name="botao_7">7</string>
+    <string name="botao_8">8</string>
+    <string name="botao_9">9</string>
+    <string name="botao_0">0</string>
+    <string name="botao_asterisco">*</string>
+    <string name="botao_jogodavelha">#</string>
+    <string name="botao_limpa_digitado">X</string>
+</resources>
