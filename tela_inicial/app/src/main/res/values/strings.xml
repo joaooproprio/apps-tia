@@ -1,0 +1,16 @@
+<!-- Última alteração: 27/09/2026 01:01 -->
+<resources>
+    <string name="app_name">Tela inicial</string>
+    <string name="botao_joao">JOÃO</string>
+    <string name="botao_janete">JANETE</string>
+    <string name="botao_whatsapp">WHATS</string>
+    <string name="botao_apps">APPS</string>
+    <string name="voltar_tela_inicial">VOLTAR PARA A TELA INICIAL</string>
+    <string name="em_preparacao">em preparação</string>
+    <string name="ligando_joao">ligando para joão</string>
+    <string name="ligando_janete">ligando para janete</string>
+    <string name="abrindo_whatsapp">abrindo whatsapp</string>
+    <string name="erro_permissao">Permita a ligação para o botão funcionar.</string>
+    <string name="erro_whatsapp">O WhatsApp não está neste celular.</string>
+    <string name="erro_app">Não foi possível abrir este aplicativo.</string>
+</resources>

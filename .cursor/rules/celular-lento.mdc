@@ -1,0 +1,18 @@
+---
+description: Código leve para o celular lento que trava ao abrir os apps da Tia
+globs: "**/*.kt"
+alwaysApply: false
+---
+
+# Celular lento
+
+Cada tela abre com pouco trabalho na thread principal.
+
+- Views nativas e poucos botões fixos. `LinearLayout` basta. Sem biblioteca nova no Gradle.
+- Não adicione WebView, animação, imagem grande ou lista paginada. O WebView da `ui_tia` é outro app e pesa; não o reaproveite na tela inicial.
+- No arranque: tela cheia, brilho no máximo, volume no máximo, permissões. Sem rede, sync ou serviço extra.
+- Uma Activity visível por vez. `CallService` já abre a chamada com `FLAG_ACTIVITY_NEW_TASK or CLEAR_TOP`.
+- Voltar ao bloquear a tela usa receiver de `ACTION_SCREEN_OFF` / `ACTION_USER_PRESENT` enquanto o processo vive, mais `singleTask`. Sem Service novo.
+- `FULL_WAKE_LOCK` em `CallService` está obsoleto. Ao alterar o acordar da tela, use `setTurnScreenOn` e `setShowWhenLocked`, que `InCallActivity` já chama. Não crie outro wake lock.
+- Falha (permissão negada, sem chamada) aparece num `TextView` grande. `Toast` some rápido para quem enxerga pouco.
+- Fala do nome: um `TextToSpeech` criado no `onCreate`, `setSpeechRate(0.8f)`, `shutdown` no `onDestroy`. Sem dependência Gradle.

@@ -1,0 +1,20 @@
+---
+description: Toque duplo com vibração, mudança de cor e trava de 10s ao abrir o telefone
+globs: "**/*.kt"
+alwaysApply: false
+---
+
+# Toque seguro
+
+Ligar, atender, desligar e abrir outro app exigem dois toques.
+
+1. Primeiro toque: trava esperando o segundo, vibra cerca de 200 ms, escurece a cor do botão e, depois de uma pausa curta, fala o nome em 0,8 vezes ("João" ou "Janete"). Não liga.
+2. Segundo toque no mesmo botão, em até 2 segundos: vibra de novo e executa uma vez.
+3. Outro botão, ou 2 s sem toque, cancela o primeiro e devolve a cor. Nada acontece.
+4. Ao abrir o telefone: ignore novos toques de ligar por 10 segundos. Use `FLAG_ACTIVITY_SINGLE_TOP` ou `CLEAR_TOP`.
+
+A trava de 10 segundos vale para abrir o telefone. Em `InCallActivity`, atender não bloqueia desligar: cada botão tem o próprio estado e só exige toque duplo.
+
+Declare `android.permission.VIBRATE` no manifest. É permissão normal, concedida na instalação. Não peça em runtime.
+
+Não deixe clique simples em `answer()` nem em `disconnect()`.

@@ -1,0 +1,18 @@
+---
+description: Contexto da tela inicial e do Ameliafone para idosa com baixa visão em celular lento
+alwaysApply: true
+---
+
+# Apps da Tia
+
+Kotlin + XML (AppCompat, `findViewById`). Quem usa tem baixa visão e erra o toque. O celular é lento e trava. Acessibilidade do sistema não substitui esta interface.
+
+O código da tela inicial não está neste repositório. `ui_tia` (WebView + "SAIR PARA HOME") é outro aplicativo: não estenda essa janela como se fosse o telefone.
+
+- Tela inicial: JOÃO 30% da altura, JANETE 30%, APLICATIVOS 15%, o resto espaço vazio. Cada nome liga para o número que aquele botão já liga. A foto antiga ainda tem MARCELA; essa linha sai.
+- Aplicativos: a janela que já existe, um nome por linha, ícone, fundo preto, e "VOLTAR PARA A TELA INICIAL" no topo. Essa lógica permanece.
+- `Ameliafone` / `InCallActivity`: durante a chamada, só ATENDER e DESLIGAR. O teclado em `activity_main.xml` é o discador antigo; não aumente essa tela.
+
+Ao abrir a tela inicial: brilho da janela no máximo e volume de toque, chamada e mídia no máximo. Só as permissões que o código usa. `VIBRATE` no manifest, sem diálogo.
+
+Quando o celular bloquear a tela, a tarefa volta para a tela inicial. Se ela já estava na frente, só retoma (`singleTask`, ou `CLEAR_TOP` com `SINGLE_TOP`), sem empilhar outra Activity.

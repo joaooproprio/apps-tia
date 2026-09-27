@@ -1,0 +1,27 @@
+---
+description: Kotlin simples e comentado em português nos apps da Tia
+globs: "**/*.kt"
+alwaysApply: false
+---
+
+# Código simples
+
+Activity e função privada. O projeto não tem ViewModel, Hilt, Compose nem Flow: não introduza.
+
+- `findViewById` e layout XML, no estilo de `MainActivity` e `InCallActivity`.
+- Comentário em português explica o porquê (toque acidental, baixa visão, celular lento, permissão). Não comente a linha óbvia.
+- Nome de função diz a ação: `ligarPara`, `travarToque`, `subirVolumeEBrilho`.
+- Extraia só lógica que se repete e é fácil de errar (toque duplo, trava, volume, brilho). Botões parecidos podem ficar na Activity.
+- Português no código. `InCallActivity` usa `llamada`; ao editar esse trecho, troque para `chamada`.
+- `minSdk` 27 na ui_tia e 28 no Ameliafone. API mais nova precisa de `if (Build.VERSION.SDK_INT >= ...)`.
+- Deixe `isMinifyEnabled = false`.
+
+```kotlin
+// Ruim: o comentário repete a linha e o nome não diz a regra.
+// seta o click
+btn.setOnClickListener { startActivity(intent) }
+
+// Bom: o comentário diz por que o toque simples é proibido.
+// Toque simples abriria o telefone várias vezes no celular lento.
+btn.setOnClickListener { confirmarToqueDuplo { abrirTelefone(numero) } }
+```

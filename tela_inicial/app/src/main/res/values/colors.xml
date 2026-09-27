@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Última alteração: 27/09/2026 01:16 -->
+<resources>
+    <color name="fundo">#FFFFFF</color>
+    <color name="joao">#0C0614</color>
+    <color name="joao_texto">#FFFFFF</color>
+    <color name="janete">#0C0614</color>
+    <color name="janete_texto">#FFFFFF</color>
+    <color name="whatsapp">#0C0614</color>
+    <color name="whatsapp_texto">#FFFFFF</color>
+    <color name="apps">#0C0614</color>
+    <color name="apps_texto">#FFFFFF</color>
+    <color name="armado">#FFD54F</color>
+    <color name="armado_texto">#000000</color>
+    <color name="preparacao_texto">#1A1024</color>
+</resources>

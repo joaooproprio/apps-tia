@@ -1,0 +1,20 @@
+---
+description: Botões grandes e alto contraste nos layouts da Tia
+globs: "**/layout/**/*.xml"
+alwaysApply: false
+---
+
+# Interface para baixa visão
+
+Tela inicial em `LinearLayout` vertical, `weightSum` 100:
+
+- JOÃO `layout_weight` 30, fundo laranja (`#FF9800`), texto branco
+- JANETE `layout_weight` 30, fundo azul (`#2196F3`), texto branco
+- espaço `layout_weight` 25
+- APLICATIVOS `layout_weight` 15, fundo cinza-azulado (`#607D8B`), texto branco
+
+Texto em negrito, maiúsculas, no mínimo 32sp, no `strings.xml`. Margem entre blocos para o dedo não acertar o vizinho. O primeiro toque escurece a cor daquele botão, para o toque aparecer sem animação.
+
+ATENDER fica verde (`#4CAF50`) e DESLIGAR vermelho (`#F44336`), maiores que o restante (hoje 50sp e 40sp em `activity_in_call.xml`).
+
+Aplicativos: fundo preto, uma linha por app (ícone + nome branco grande), barra "VOLTAR PARA A TELA INICIAL" no topo. Sem grade, menu, aba ou pressionar longo.
