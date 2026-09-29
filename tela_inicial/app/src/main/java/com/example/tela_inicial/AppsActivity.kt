@@ -1,10 +1,11 @@
-// Última alteração: 27/09/2026 01:05
 package com.example.tela_inicial
+// Última alteração: 29/09/2026 00:53
 
 
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ResolveInfo
+import android.content.res.ColorStateList
 import android.media.AudioManager
 import android.os.Build
 import android.os.Bundle
@@ -23,9 +24,9 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 
 class AppsActivity : AppCompatActivity() {
 
@@ -37,16 +38,14 @@ class AppsActivity : AppCompatActivity() {
         linhaTravada?.setBackgroundColor(getColor(R.color.fundo))
         linhaTravada?.findViewById<TextView>(R.id.nomeApp)?.setTextColor(getColor(R.color.apps))
         linhaTravada = null
-        findViewById<Button>(R.id.btnVoltar)?.let {
-            it.setBackgroundColor(getColor(R.color.apps))
-            it.setTextColor(getColor(R.color.apps_texto))
-        }
+        findViewById<Button>(R.id.btnVoltar)?.let { pintarVoltar(it, R.color.apps, R.color.apps_texto) }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_apps)
         prepararJanela()
+        reservarBotoesDoSistema()
 
         val btnVoltar = findViewById<Button>(R.id.btnVoltar)
         val lista = findViewById<ListView>(R.id.listaApps)
@@ -60,8 +59,7 @@ class AppsActivity : AppCompatActivity() {
                 evento.x >= 0 && evento.y >= 0 &&
                 evento.x <= vista.width && evento.y <= vista.height
             ) {
-                btnVoltar.setBackgroundColor(getColor(R.color.armado))
-                btnVoltar.setTextColor(getColor(R.color.armado_texto))
+                pintarVoltar(btnVoltar, R.color.armado, R.color.armado_texto)
                 vibrar()
                 TravaToque.travar()
                 handler.removeCallbacks(soltarToque)
@@ -113,12 +111,25 @@ class AppsActivity : AppCompatActivity() {
             .sortedBy { it.loadLabel(packageManager).toString().lowercase() }
     }
 
+    private fun pintarVoltar(botao: Button, fundo: Int, texto: Int) {
+        botao.setBackgroundColor(getColor(fundo))
+        botao.setTextColor(getColor(texto))
+        botao.compoundDrawableTintList = ColorStateList.valueOf(getColor(texto))
+    }
+
+    // A lista para antes dos botões de voltar, início e recentes. Sem isso as linhas ficam em cima deles.
+    private fun reservarBotoesDoSistema() {
+        val raiz = findViewById<View>(R.id.raizApps)
+        ViewCompat.setOnApplyWindowInsetsListener(raiz) { vista, insets ->
+            val barras = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            vista.setPadding(0, barras.top, 0, barras.bottom)
+            insets
+        }
+        ViewCompat.requestApplyInsets(raiz)
+    }
+
     private fun prepararJanela() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        WindowInsetsControllerCompat(window, window.decorView).apply {
-            hide(WindowInsetsCompat.Type.systemBars())
-            systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
         window.attributes = window.attributes.apply { screenBrightness = 1f }
         val audio = getSystemService(Context.AUDIO_SERVICE) as AudioManager
         listOf(AudioManager.STREAM_RING, AudioManager.STREAM_VOICE_CALL, AudioManager.STREAM_MUSIC).forEach { fluxo ->

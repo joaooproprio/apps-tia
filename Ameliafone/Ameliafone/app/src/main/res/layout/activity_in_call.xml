@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Última alteração: 28/09/2026 00:38 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/raizChamada"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
@@ -13,13 +15,13 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:gravity="bottom|center_horizontal"
-        android:text="Recebendo chamada..."
+        android:text="@string/recebendo_chamada"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tvNumero"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
         android:gravity="center"
@@ -28,16 +30,29 @@
         android:textColor="@android:color/black"
         android:textSize="32sp" />
 
+    <TextView
+        android:id="@+id/tvX"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:gravity="center"
+        android:text="@string/aviso_desconhecido"
+        android:textColor="#F44336"
+        android:textSize="120sp"
+        android:textStyle="bold" />
+
     <android.widget.Button
         android:id="@+id/btnAnswer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="60"
+        android:layout_weight="20"
         android:layout_margin="16dp"
+        android:background="@drawable/botao_chamada"
         android:backgroundTint="#4CAF50"
+        android:stateListAnimator="@null"
         android:text="ATENDER"
         android:textColor="@android:color/white"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <android.widget.Button
@@ -46,7 +61,9 @@
         android:layout_height="0dp"
         android:layout_weight="20"
         android:layout_margin="16dp"
+        android:background="@drawable/botao_chamada"
         android:backgroundTint="#F44336"
+        android:stateListAnimator="@null"
         android:text="DESLIGAR"
         android:textColor="@android:color/white"
         android:textSize="40sp"

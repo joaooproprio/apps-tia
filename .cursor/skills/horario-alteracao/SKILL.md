@@ -1,19 +1,20 @@
 ---
 name: horario-alteracao
-description: Grava na primeira linha do código o horário da última alteração. Use ao criar ou editar arquivos .kt, .kts, .java ou .xml.
+description: Grava abaixo do package o horário da última alteração. Use ao criar ou editar arquivos .kt, .kts, .java ou .xml.
 ---
 
 # Horário da última alteração
 
-Ao criar ou editar um arquivo `.kt`, `.kts`, `.java` ou `.xml`, a primeira linha útil leva a data e a hora dessa edição.
+Ao criar ou editar um arquivo `.kt`, `.kts`, `.java` ou `.xml`, a linha seguinte ao `package` leva a data e a hora dessa edição.
 
 Use o relógio do momento da gravação, fuso `America/Sao_Paulo`, formato `dd/MM/yyyy HH:mm`. Não invente o horário.
 
 ## Onde escrever
 
-- Kotlin, Kotlin Script e Java: a linha 1 do arquivo.
+- Kotlin, Kotlin Script e Java: a linha seguinte ao `package`.
 
 ```kotlin
+package com.example.tela_inicial
 // Última alteração: 27/09/2026 00:49
 ```
 

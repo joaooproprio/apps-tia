@@ -1,4 +1,5 @@
 package com.example.tela_inicial
+// Última alteração: 26/09/2026 22:03
 
 import android.app.Application
 import android.content.BroadcastReceiver

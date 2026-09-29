@@ -1,4 +1,5 @@
 package com.example.ameliafone
+// Última alteração: 24/05/2026 08:51
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

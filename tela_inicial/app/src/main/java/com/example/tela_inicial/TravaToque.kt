@@ -1,5 +1,5 @@
-// Última alteração: 27/09/2026 00:55
 package com.example.tela_inicial
+// Última alteração: 27/09/2026 00:55
 
 import android.os.SystemClock
 

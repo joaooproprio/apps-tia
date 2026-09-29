@@ -1,7 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Última alteração: 29/09/2026 00:09 -->
 <resources>
-    <string name="app_name">Ameliafone</string>
+    <string name="app_name">01_telefone_amelia</string>
+    <string name="admin_explicacao">Apaga a tela ao atender e quando a outra pessoa desliga.</string>
+    <string name="recebendo_chamada">Recebendo chamada...</string>
+    <string name="aviso_desconhecido">X</string>
+    <string name="erro_contatos">Erro: não deu para ver os contatos</string>
+    <string name="titulo_perdida">Chamada perdida</string>
+    <string name="titulo_perdidas">Chamadas perdidas (%d)</string>
+    <string name="canal_perdidas">Chamadas perdidas</string>
     <string name="botao_ligar">LIGAR</string>
     <string name="botao_contatos">CONTATOS</string>
+    <string name="botao_historico">HISTÓRICO</string>
+    <string name="voltar">VOLTAR</string>
+    <string name="historico_vazio">Nenhuma ligação</string>
+    <string name="erro_historico">Erro: não deu para ver o histórico</string>
+    <string name="ligacao_feita">FEITA</string>
+    <string name="ligacao_recebida">RECEBIDA</string>
+    <string name="ligacao_perdida">PERDIDA</string>
+    <string name="ligando">Ligando...</string>
+    <string name="chamada_andamento">Chamada em andamento...</string>
     <string name="botao_1">1</string>
     <string name="botao_2">2</string>
     <string name="botao_3">3</string>

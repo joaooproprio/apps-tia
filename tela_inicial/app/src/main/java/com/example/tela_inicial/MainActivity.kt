@@ -1,5 +1,5 @@
-// Última alteração: 27/09/2026 01:16
 package com.example.tela_inicial
+// Última alteração: 29/09/2026 01:01
 
 import android.Manifest
 import android.app.role.RoleManager
@@ -293,6 +293,7 @@ class MainActivity : AppCompatActivity() {
         raiz.post {
             if (jaEspacou || vaoTopo.height == 0) return@post
             jaEspacou = true
+            // 5% da largura nas laterais, para o dedo não encostar na borda.
             val margem = (raiz.width * 0.05f).toInt()
             listOf(R.id.btnJoao, R.id.btnJanete, R.id.linhaBaixo).forEach { id ->
                 val vista = findViewById<View>(id)
@@ -301,16 +302,25 @@ class MainActivity : AppCompatActivity() {
                 params.marginEnd = margem
                 vista.layoutParams = params
             }
+            // 10% da largura da tela entre WHATS e APPS.
             val meio = findViewById<View>(R.id.vaoMeio)
-            meio.layoutParams = meio.layoutParams.apply { width = vaoTopo.height }
+            meio.layoutParams = (meio.layoutParams as LinearLayout.LayoutParams).apply {
+                width = (raiz.width * 0.10f).toInt()
+                weight = 0f
+            }
             aumentarLogoWhatsapp()
         }
     }
 
+    // A palavra WHATS e o logo dividem o botão, os dois grandes.
     private fun aumentarLogoWhatsapp() {
         val botao = findViewById<Button>(R.id.btnWhatsapp)
-        val texto = botao.paint.fontMetrics.let { it.descent - it.ascent }.toInt()
-        val lado = ((minOf(botao.width, botao.height) - texto - botao.paddingTop - botao.paddingBottom) * 0.7f).toInt()
+        val altura = botao.height - botao.paddingTop - botao.paddingBottom
+        val largura = botao.width - botao.paddingLeft - botao.paddingRight
+        if (altura <= 0 || largura <= 0) return
+        val reservaTexto = (altura * 0.40f).toInt()
+        botao.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, reservaTexto / 1.2f)
+        val lado = minOf(largura, altura - reservaTexto - botao.compoundDrawablePadding)
         if (lado <= 0) return
         val icone = ContextCompat.getDrawable(this, R.drawable.ic_whatsapp)?.mutate() ?: return
         icone.setBounds(0, 0, lado, lado)

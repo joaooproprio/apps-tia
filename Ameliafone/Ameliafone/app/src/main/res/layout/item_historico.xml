@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Última alteração: 29/09/2026 00:09 -->
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/tecla_discador"
+    android:gravity="center"
+    android:minHeight="96dp"
+    android:padding="12dp"
+    android:stateListAnimator="@null"
+    android:textAllCaps="false"
+    android:textColor="@android:color/black"
+    android:textSize="32sp" />

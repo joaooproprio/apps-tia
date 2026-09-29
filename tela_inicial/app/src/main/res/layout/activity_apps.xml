@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Última alteração: 27/09/2026 01:05 -->
+<!-- Última alteração: 29/09/2026 00:58 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/raizApps"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
@@ -12,16 +13,24 @@
         android:layout_height="wrap_content"
         android:background="@color/apps"
         android:backgroundTint="@null"
-        android:textColor="@color/apps_texto"
+        android:drawableStart="@drawable/ic_seta_esquerda"
+        android:drawablePadding="16dp"
+        android:drawableTint="@color/apps_texto"
+        android:gravity="center_vertical|start"
         android:minHeight="72dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="@string/voltar_tela_inicial"
+        android:textColor="@color/apps_texto"
         android:textSize="36sp"
         android:textStyle="bold" />
 
+    <!-- Altura 0 com peso: as linhas ficam só abaixo do voltar e não cobrem o botão. -->
     <ListView
         android:id="@+id/listaApps"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:divider="#E0E0E0"
         android:dividerHeight="1dp" />
 
